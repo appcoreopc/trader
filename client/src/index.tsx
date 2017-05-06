@@ -13,7 +13,20 @@ let modelId = 'login';
 let workspace = new Workspace(modelId, router);
 workspace.registerWithRouter();
 
+let subscription = router
+  .getModelObservable(modelId)
+  // the router has a built-in observable API with basic methods, where(), do(), map(), take() 
+  .do(model =>  { /* gets invoked on each update */ })
+  .subscribe(model => {
+      console.log(`Updating view. Username is: ${model.username}`);
+      console.log('testste')
+    }
+  );
+router.publishEvent(modelId, 'setUsername', {username : 'jeremy'});
 ReactDOM.render(
+
+
+
 <RouterProvider router={router}>
     <SmartComponent modelId={workspace._modelId} view={WorkSpaceView} compiler='test' framework='11' />
 </RouterProvider>, document.getElementById("example"));
