@@ -1,22 +1,27 @@
 {
-  "name": "client",
+  "name": "personnel",
   "version": "1.0.0",
-  "description": "trader",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "jeremy woo <kepung@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@types/react": "^15.0.24",
-    "@types/react-dom": "^15.5.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "@types/lodash": "^4.14.64",
+    "@types/react": "^15.0.18",
+    "@types/react-dom": "^0.14.23",
+    "@types/react-redux": "^4.4.38",
+    "@types/redux": "^3.6.0",
+    "lodash": "^4.17.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
-    "awesome-typescript-loader": "^3.1.3",
-    "source-map-loader": "^0.2.1",
-    "typescript": "^2.3.2"
+    "awesome-typescript-loader": "^3.1.2",
+    "source-map-loader": "^0.2.0",
+    "typescript": "^2.2.1"
   }
 }
