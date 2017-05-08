@@ -13,25 +13,28 @@ export interface InfoBoxProps {
 
 export class MainComponent extends React.Component < any,
 undefined > {
+    context : any;
 
-  context: any;
-  
-  static contextTypes = {
-    store: React.PropTypes.object
-  }
-
-    incr() {
-        //console.log(this.props);
+    static contextTypes = {
+        store: React.PropTypes.object
     }
+
+    incr() {}
 
     render() {
         return <div>
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <button type="button" onClick={
-                            e => this.context.store.dispatch({ type:'INCR', by: 1 })
-                        }>Click Me!</button>
+                        <button
+                            type="button"
+                            onClick={e => this
+                            .context
+                            .store
+                            .dispatch({type: 'INCR', st : {
+    candidate: '22222',
+    description : '22222222'
+}  })}>Click Me!</button>
                     </div>
                 </div>
                 <div className="row">
@@ -48,7 +51,6 @@ undefined > {
 }
 
 const mapStateToProps = (state : any) => state;
-
 const mapDispatchToProps = (dispatch : any) => ({
     incr: () => {
         console.log('incrementing');
@@ -58,7 +60,5 @@ const mapDispatchToProps = (dispatch : any) => ({
         dispatch({type: 'INCR', by: -1});
     }
 });
-
-console.log('main component loaded');
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainComponent);
