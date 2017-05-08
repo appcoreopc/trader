@@ -1,32 +1,24 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import {MainComponent} from './components/main/MainComponent';
 
-import {Hello} from "./components/Hello";
-import {Hello2} from "./components/Hello2";
-import {RouterProvider, SmartComponent} from 'esp-js-react';
-import { Workspace } from './components/models/Workspace';
-import { WorkSpaceView } from './components/views/WorkSpaceView'
-import * as esp from 'esp-js';
-
-let router = new esp.Router();
-let modelId = 'login';
-let workspace = new Workspace(modelId, router);
-workspace.registerWithRouter();
-
-let subscription = router
-  .getModelObservable(modelId)
-  // the router has a built-in observable API with basic methods, where(), do(), map(), take() 
-  .do(model =>  { /* gets invoked on each update */ })
-  .subscribe(model => {
-      console.log(`Updating view. Username is: ${model.username}`);
-      console.log('testste')
+let store = createStore((state : any, action : any) => {
+    switch (action.type) {
+        case 'INCR':
+            console.log('store event here');
+            console.log(state);
+            return {candidate: action.incr, key: action.key};
+        default:
+            return state;
     }
-  );
-router.publishEvent(modelId, 'setUsername', {username : 'jeremy'});
+}, {
+    candidate: 'test',
+    key: 'test 2222'
+});
+
 ReactDOM.render(
-
-
-
-<RouterProvider router={router}>
-    <SmartComponent modelId={workspace._modelId} view={WorkSpaceView} compiler='test' framework='11' />
-</RouterProvider>, document.getElementById("example"));
+    <Provider store={store}>
+    <MainComponent/>
+</Provider>, document.getElementById("example"));
