@@ -31,9 +31,9 @@ undefined > {
                             onClick={e => this
                             .context
                             .store
-                            .dispatch({type: 'INCR', st : {
-    candidate: '22222',
-    description : '22222222'
+                            .dispatch({type: 'INCR', item : {
+    title: '22222',
+    description : '22222222', buyValue : "200", sellValue : "300"
 }  })}>Click Me!</button>
                     </div>
                 </div>

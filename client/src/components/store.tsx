@@ -3,8 +3,10 @@ export const FeedStore = (state : any, action : any) => {
         case 'INCR':
             console.log('store event here');
             let newstate = {
-                'candidate': action.st.candidate,
-                'description': action.st.description
+                'title': action.item.title,
+                'description': action.item.description,
+                'sellValue' : action.item.sellValue, 
+                'buyValue' : action.item.buyValue
             };
             console.log('state');
             console.log(state);

@@ -8,7 +8,7 @@ import { FeedStore} from './components/store'
  
 let store = createStore(FeedStore, {
     title: 'title',
-    description: 'test 2222',
+    description: 'Currency Conversion',
     buyValue : "96",
     sellValue : "100"
 });
