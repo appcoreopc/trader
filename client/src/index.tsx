@@ -9,7 +9,8 @@ import { FeedStore} from './components/store'
 let store = createStore(FeedStore, {
     title: 'title',
     description: 'test 2222',
-    value : "96"
+    buyValue : "96",
+    sellValue : "100"
 });
 
 ReactDOM.render(

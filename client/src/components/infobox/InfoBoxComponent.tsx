@@ -1,3 +1,4 @@
+import { symbolIteratorPonyfill } from 'rxjs/symbol/iterator';
 import {connect} from 'react-redux';
 import * as React from "react";
 
@@ -40,9 +41,16 @@ undefined > {
                     <div className="body-panel-white">{this.props.title}</div>
                     <div className="panel-body-dark">
                         <div className="boxModel">
-                        
-                        
-                        
+
+                            <table className="table">
+                                <tr>
+                                    <td>BUY</td>
+                                    <td className="blue-text">{this.context.store.getState().buyValue}</td>
+                                    <td></td>
+                                    <td >SELL</td>
+                                    <td className="blue-text">{this.context.store.getState().sellValue}</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
