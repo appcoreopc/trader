@@ -4,24 +4,12 @@ import * as ReactDOM from "react-dom";
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {MainComponent} from './components/main/MainComponent';
-
-let store = createStore((state : any, action : any) => {
-    switch (action.type) {
-        case 'INCR':
-            console.log('store event here');
-            let newstate = {
-                'candidate': action.st.candidate,
-                'description': action.st.description
-            };
-            console.log('state');
-            console.log(state);
-            return newstate;
-        default:
-            return state;
-    }
-}, {
-    candidate: 'title',
-    description: 'test 2222'
+import { FeedStore} from './components/store'
+ 
+let store = createStore(FeedStore, {
+    title: 'title',
+    description: 'test 2222',
+    value : "96"
 });
 
 ReactDOM.render(

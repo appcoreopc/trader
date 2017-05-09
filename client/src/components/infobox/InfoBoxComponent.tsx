@@ -5,7 +5,7 @@ export interface InfoBoxProps {
     title : string;
     //imgUrl : string;
     description : string;
-    //value : number;
+    tickerCode : string;
 }
 
 export class InfoBoxComponent extends React.Component < InfoBoxProps,
@@ -17,13 +17,16 @@ undefined > {
 
     private unsubscribe : Function;
 
+    constructor()
+    {
+        super();
+    }
+
     componentDidMount() {
         this.unsubscribe = this
             .context
             .store
             .subscribe(() => this.forceUpdate());
-        console.log(this.props);
-        console.log(this.context);
 
     }
     componentWillUnmount() {
@@ -31,14 +34,18 @@ undefined > {
     }
 
     render() {
-        return <div className="row">
-            <div className="col-md-2">
-                <div>{this.props.title}</div>
-                <div>{this
-                        .context
-                        .store
-                        .getState()
-                        .description}</div>
+        return <div>
+            <div className="col-md-3">
+                <div className=".panel panel-default">
+                    <div className="body-panel-white">{this.props.title}</div>
+                    <div className="panel-body-dark">
+                        <div className="boxModel">
+                        
+                        
+                        
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>;
     }

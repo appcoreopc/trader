@@ -1,0 +1,30 @@
+.boxModel { 
+    padding : 20px;
+    background-color : #252932;
+    color : #6c6f73;
+}
+
+.body-panel-dark {
+    padding : 10px;
+}
+
+.dark { 
+ background-color : #252932;   
+ padding : 5px;
+ color : #0b809c;
+}
+
+.body-panel-white { 
+ padding : 5px;
+ color : #fff;
+ background-color : #252932;   
+}
+
+.body-content-white { 
+ padding : 0px;
+ color : #fff;
+}
+
+.blue-text {
+    color : #0b809c;
+}
