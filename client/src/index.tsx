@@ -4,7 +4,8 @@ import * as ReactDOM from "react-dom";
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {MainComponent} from './components/main/MainComponent';
-import { FeedStore} from './components/store'
+import { FeedStore} from './components/store';
+import { FeedService} from './components/service/FeedService';
  
 let store = createStore(FeedStore, {
     title: 'title',
@@ -12,6 +13,9 @@ let store = createStore(FeedStore, {
     buyValue : "96",
     sellValue : "100"
 });
+
+let fd = new FeedService(store);
+fd.start();
 
 ReactDOM.render(
     <Provider store={store}>

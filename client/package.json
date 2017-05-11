@@ -10,11 +10,13 @@
   "author": "jeremy woo <kepung@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@types/autobahn": "^0.9.35",
     "@types/lodash": "^4.14.64",
     "@types/react": "^15.0.18",
     "@types/react-dom": "^0.14.23",
     "@types/react-redux": "^4.4.38",
     "@types/redux": "^3.6.0",
+    "autobahn": "^17.5.1",
     "lodash": "^4.17.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

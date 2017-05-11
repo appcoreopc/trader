@@ -29,8 +29,6 @@ namespace TradeHost
                 {
                     try
                     {
-
-
                         WampEvent @event = new WampEvent()
                         {
                             Options = new PublishOptions { DiscloseMe = true },

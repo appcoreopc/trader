@@ -8,9 +8,15 @@ export const FeedStore = (state : any, action : any) => {
                 'sellValue' : action.item.sellValue, 
                 'buyValue' : action.item.buyValue
             };
-            console.log('state');
-            console.log(state);
             return newstate;
+        case 'FEED':
+            let feedstate = {
+                'title': action.item.title,
+                'description': action.item.description,
+                'sellValue' : action.item.sellValue, 
+                'buyValue' : action.item.buyValue
+        };
+            return feedstate;
         default:
             return state;
     }
