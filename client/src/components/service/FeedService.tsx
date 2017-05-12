@@ -1,16 +1,17 @@
 import {TradeConnection} from './Connection';
 
 export class FeedService {
-    conn : TradeConnection;
 
-    constructor(store : any)
+    conn : TradeConnection;
+    store : any;
+
+    constructor(reduxStore : any)
     {
-        this.conn = new TradeConnection();
+        this.store = reduxStore;
+        this.conn = new TradeConnection(this.store);
     }
 
     start() {
-        this
-            .conn
-            .start();
+        this.conn.start();
     }
 }

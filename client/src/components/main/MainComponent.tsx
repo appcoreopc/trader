@@ -27,14 +27,7 @@ undefined > {
                 <div className="row">
                     <div className="col-md-12">
                         <button
-                            type="button"
-                            onClick={e => this
-                            .context
-                            .store
-                            .dispatch({type: 'INCR', item : {
-    title: '22222',
-    description : '22222222', buyValue : "200", sellValue : "300"
-}  })}>Click Me!</button>
+                            type="button">Click Me!</button>
                     </div>
                 </div>
                 <div className="row">

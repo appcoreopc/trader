@@ -24,7 +24,7 @@ namespace TradeHost
                     TimeSpan.FromMilliseconds(5000));
 
                 Random random = new Random();
-                
+
                 var disposable = timer.Subscribe(b =>
                 {
                     try
@@ -35,8 +35,11 @@ namespace TradeHost
                             Arguments = new object[] { random.Next(0, 100), 23 },
                             ArgumentsKeywords = new Dictionary<string, object>
                 {
-                    {"c", "Hello"},
-                    {"d", DateTime.Now.ToString() }
+                    {"type", "TRADEINFO"},
+                    {"ticker", "GOOGLE"},
+                    {"date", DateTime.Now.ToString() },
+                    {"buyValue", random.Next(0, 100)},
+                    {"sellValue", random.Next(0, 100) }
                 }
                         };
 
@@ -52,7 +55,6 @@ namespace TradeHost
                 realm.SessionCreated += Realm_SessionCreated; ;
                 Console.WriteLine("Server is running on " + location);
                 Console.ReadLine();
-
             }
         }
 
