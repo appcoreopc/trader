@@ -32,10 +32,10 @@ undefined > {
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <InfoBoxComponent title='title1' tickerCode='' description='description1'/>
-                        <InfoBoxComponent title='title2' tickerCode='' description='description1'/>
-                        <InfoBoxComponent title='title3' tickerCode='' description='description1'/>
-                        <InfoBoxComponent title='title4' tickerCode='' description='description1'/>
+                        <InfoBoxComponent title='GOO' tickerCode='GOOGLE' description='description1'/>
+                        <InfoBoxComponent title='APPLE' tickerCode='APPLE' description='description1'/>
+                        <InfoBoxComponent title='MSFT' tickerCode='MICROSOFT' description='description1'/>
+                        <InfoBoxComponent title='IBM' tickerCode='IBM' description='description1'/>
                     </div>
                 </div>
             </div>

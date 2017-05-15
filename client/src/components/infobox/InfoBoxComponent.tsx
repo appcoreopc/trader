@@ -15,7 +15,7 @@ undefined > {
     static contextTypes = {
         store: React.PropTypes.object
     }
-
+    
     private unsubscribe : Function;
 
     constructor()
@@ -37,21 +37,22 @@ undefined > {
     render() {
         return <div>
             <div className="col-md-3">
-                <div className=".panel panel-default">
+                <div className="panel">
+                    
                     <div className="body-panel-white">{this.props.title}</div>
                     <div className="panel-body-dark">
                         <div className="boxModel">
 
                             <table className="table">
                                 <tr>
-                                    <td>BUY</td>
+                                    <td className="tradeText">BUY</td>
                                     <td className="blue-text">{this
                                             .context
                                             .store
                                             .getState()
                                             .buyValue}</td>
                                     <td></td>
-                                    <td >SELL</td>
+                                    <td className="tradeText">SELL</td>
                                     <td className="blue-text">{this
                                             .context
                                             .store

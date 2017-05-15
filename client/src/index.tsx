@@ -30,13 +30,10 @@ let store = createStore((state : any, action : any) => {
 
 console.log(store);
 
-
-
-
 ReactDOM.render(
     <Provider store={store}>
     <MainComponent/>
-</Provider>, document.getElementById("example"));
+</Provider>, document.getElementById("app"));
 
 console.log('feedservice');
 let feedService = new FeedService(store);
