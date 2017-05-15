@@ -12,6 +12,7 @@ let store = createStore((state : any, action : any) => {
         case 'TRADEINFO':
             console.log('TRADE INFO EVENT HANDLING');
             let newstate = {
+                'tickerCode' : action.item.ticker,
                 'title': action.item.title,
                 'description': action.item.description,
                 'sellValue' : action.item.sellValue, 

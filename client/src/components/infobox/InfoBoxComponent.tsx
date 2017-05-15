@@ -12,11 +12,16 @@ export interface InfoBoxProps {
 export class InfoBoxComponent extends React.Component < InfoBoxProps,
 undefined > {
     context : any;
+
     static contextTypes = {
         store: React.PropTypes.object
     }
-    
+
     private unsubscribe : Function;
+
+    private tickerCode : string;
+    private buyValue : string;
+    private sellValue : string;
 
     constructor()
     {
@@ -27,8 +32,27 @@ undefined > {
         this.unsubscribe = this
             .context
             .store
-            .subscribe(() => this.forceUpdate());
+            .subscribe(() => {
 
+                if (this.props.tickerCode == this.context.store.getState().tickerCode) {
+                    this.buyValue = this
+                        .context
+                        .store
+                        .getState()
+                        .buyValue;
+                    this.sellValue = this
+                        .context
+                        .store
+                        .getState()
+                        .sellValue;
+
+                } else {
+                    console.log('notsame');
+                    this.buyValue = "0";
+                    this.sellValue = "0";
+                }
+                this.forceUpdate();
+            });
     }
     componentWillUnmount() {
         this.unsubscribe();
@@ -38,7 +62,7 @@ undefined > {
         return <div>
             <div className="col-md-3">
                 <div className="panel">
-                    
+
                     <div className="body-panel-white">{this.props.title}</div>
                     <div className="panel-body-dark">
                         <div className="boxModel">
@@ -46,18 +70,10 @@ undefined > {
                             <table className="table">
                                 <tr>
                                     <td className="tradeText">BUY</td>
-                                    <td className="blue-text">{this
-                                            .context
-                                            .store
-                                            .getState()
-                                            .buyValue}</td>
+                                    <td className="blue-text">{this.buyValue}</td>
                                     <td></td>
                                     <td className="tradeText">SELL</td>
-                                    <td className="blue-text">{this
-                                            .context
-                                            .store
-                                            .getState()
-                                            .sellValue}</td>
+                                    <td className="blue-text">{this.sellValue}</td>
                                 </tr>
                             </table>
                         </div>
