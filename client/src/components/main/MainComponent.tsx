@@ -3,6 +3,7 @@ import {every} from 'rxjs/operator/every';
 import {connect} from 'react-redux';
 import * as React from "react";
 import {InfoBoxComponent} from '../infobox/InfoBoxComponent';
+import {PriceIndexComponent} from '../priceindex/PriceIndexComponent';
 
 export interface InfoBoxProps {
     title : string;
@@ -26,8 +27,6 @@ undefined > {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <button
-                            type="button">Click Me!</button>
                     </div>
                 </div>
                 <div className="row">
@@ -36,6 +35,9 @@ undefined > {
                         <InfoBoxComponent title='APPLE' tickerCode='APPLE' description='description1'/>
                         <InfoBoxComponent title='MSFT' tickerCode='MICROSOFT' description='description1'/>
                         <InfoBoxComponent title='IBM' tickerCode='IBM' description='description1'/>
+
+                        <PriceIndexComponent title="NYSE" />
+
                     </div>
                 </div>
             </div>

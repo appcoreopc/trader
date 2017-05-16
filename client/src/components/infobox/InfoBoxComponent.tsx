@@ -20,8 +20,8 @@ undefined > {
     private unsubscribe : Function;
 
     private tickerCode : string;
-    private buyValue : string;
-    private sellValue : string;
+    private buyValue : string = "0";
+    private sellValue : string = "0";
 
     constructor()
     {
@@ -46,11 +46,7 @@ undefined > {
                         .getState()
                         .sellValue;
 
-                } else {
-                    console.log('notsame');
-                    this.buyValue = "0";
-                    this.sellValue = "0";
-                }
+                } 
                 this.forceUpdate();
             });
     }

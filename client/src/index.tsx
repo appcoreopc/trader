@@ -4,13 +4,11 @@ import * as ReactDOM from "react-dom";
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {MainComponent} from './components/main/MainComponent';
-//import {FeedStore} from './components/store';
 import {FeedService} from './components/service/FeedService';
 
 let store = createStore((state : any, action : any) => {
     switch (action.type) {
         case 'TRADEINFO':
-            console.log('TRADE INFO EVENT HANDLING');
             let newstate = {
                 'tickerCode' : action.item.ticker,
                 'title': action.item.title,
