@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reactive.Linq;
+using TradeHost.Rpc;
 using WampSharp.V2;
 using WampSharp.V2.Core.Contracts;
 using WampSharp.V2.Realm;
@@ -20,6 +21,12 @@ namespace TradeHost
 
                 var subject = realm.Services.GetSubject(HostContants.TradeTopic);
 
+                // Add some RPC Supports 
+
+                var priceIndexService = new PriceIndexService();
+
+                realm.Services.RegisterCallee(priceIndexService);
+                
                 IObservable<long> timer = Observable.Timer(TimeSpan.FromMilliseconds(0),
                     TimeSpan.FromMilliseconds(5000));
 

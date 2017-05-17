@@ -27,8 +27,11 @@ export class TradeConnection
         }
 
         this.tradeConnection.onopen = (session, details) => {
+            
             console.log('connection opened');
+            
             let store = this.store;
+
             session.subscribe(this.topic, (argument, argumentKeyword, details) => {
                 var tradeInfo = {
                     'type': argumentKeyword.type,
@@ -41,6 +44,23 @@ export class TradeConnection
                 };
                 store.dispatch(tradeInfo);
             });
+
+            console.log('we are calling a service');
+            // tries to call a RPC 
+            session.call('com.trader.getIndexPrice').then((a ) => 
+            {
+                console.log(a);
+            });
+
+
+
+
+
+
+
+
+
+
         };
     }
 }
