@@ -4,19 +4,19 @@ export class TradeConnection
 {
     private tradeConnection : Connection;
     private store : any;
+    connectionUrl : string = "ws://127.0.0.1:8080/";
+    realm : string = "TradeRealm"
+    topic : string = "TradeTopic";
 
     constructor(reduxStore : any) {
         this.store = reduxStore;
-        console.log('passed redux data store!!');
-        console.log(this.store);
     }
 
     start() {
 
-        console.log('opening connection ...');
-        console.log(this.store);
+        console.log('opening connection');
 
-        this.tradeConnection = new Connection({url: 'ws://127.0.0.1:8080/', realm: 'TradeRealm'});
+        this.tradeConnection = new Connection({url: this.connectionUrl, realm: this.realm});
         this
             .tradeConnection
             .open();
@@ -29,8 +29,7 @@ export class TradeConnection
         this.tradeConnection.onopen = (session, details) => {
             console.log('connection opened');
             let store = this.store;
-            session.subscribe("TradeTopic", (argument, argumentKeyword, details) => {
-
+            session.subscribe(this.topic, (argument, argumentKeyword, details) => {
                 var tradeInfo = {
                     'type': argumentKeyword.type,
                     'item': {
@@ -40,39 +39,8 @@ export class TradeConnection
                         sellValue: argumentKeyword.sellValue
                     }
                 };
-
-            store.dispatch(tradeInfo);
+                store.dispatch(tradeInfo);
             });
         };
-    }
-
-    relayMessage(data : any)
-    {
-        console.log('logging store info');
-        //console.log(data);
-        this
-            .store
-            .dispatch(data);
-        console.log(this.store);
-        console.log('-----------------');
-    }
-
-    tradeEventHandler(argument : any, argumentKeyword : any, details : IEvent) {
-        var tradeInfo = {
-            'type': argumentKeyword.type,
-            'item': {
-                ticker: argumentKeyword.ticker,
-                description: '22222222',
-                buyValue: argumentKeyword.buyValue,
-                sellValue: argumentKeyword.sellValue
-            }
-        };
-
-        console.log('relaying');
-        console.log(this.store);
-        console.log('-----------------');
-        this
-            .store
-            .dispatch(tradeInfo);
     }
 }
