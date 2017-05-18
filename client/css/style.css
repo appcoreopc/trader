@@ -54,3 +54,9 @@ div .panel {
 .boxModel:hover { 
   background-color : #183541;
 }
+
+.nv-y text{
+  font-size: 9px;
+  fill: #fff;
+  
+}
