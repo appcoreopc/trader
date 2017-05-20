@@ -33,9 +33,8 @@ undefined > {
                     <div className="col-md-12">
                         <InfoBoxComponent title='GOO' tickerCode='GOOGLE' description='description1'/>
                         <InfoBoxComponent title='APPLE' tickerCode='APPLE' description='description1'/>
-                        <InfoBoxComponent title='MSFT' tickerCode='MICROSOFT' description='description1'/>
+                        <InfoBoxComponent title='MSFT' tickerCode='MSFT' description='description1'/>
                         <InfoBoxComponent title='IBM' tickerCode='IBM' description='description1'/> 
-
                         <PriceIndexComponent title="NYSE - Index" />
 
                     </div>

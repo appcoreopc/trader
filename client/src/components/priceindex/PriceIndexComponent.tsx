@@ -60,7 +60,7 @@ undefined > {
         .tickFormat(d3.format(',.2f'));
 
     d3.select('#chart svg')
-      .datum(this.data)
+      .datum(this.data).style('opacity', 0.5)
       .call(chart);
 
         nv.utils.windowResize(chart.update);

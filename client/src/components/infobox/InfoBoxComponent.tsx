@@ -84,7 +84,6 @@ const mapStateToProps = (state : any) => state;
 
 const mapDispatchToProps = (dispatch : any) => ({
     incr: () => {
-        console.log('infobox receiving .....');
         dispatch({type: 'INCR', by: 1});
     },
     decr: () => {

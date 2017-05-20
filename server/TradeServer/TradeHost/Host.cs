@@ -31,9 +31,18 @@ namespace TradeHost
                     TimeSpan.FromMilliseconds(5000));
 
                 Random random = new Random();
+                Random tickerRandom = new Random();
+
+                var tickerList = new List<string>()
+                {
+                    "GOOGLE", "MSFT", "IBM", "APPLE"
+                };
 
                 var disposable = timer.Subscribe(b =>
                 {
+                    var tickerCode = tickerList[tickerRandom.Next(0, tickerList.Count)];
+                    Console.WriteLine(tickerCode);
+
                     try
                     {
                         WampEvent @event = new WampEvent()
@@ -43,7 +52,7 @@ namespace TradeHost
                             ArgumentsKeywords = new Dictionary<string, object>
                 {
                     {"type", "TRADEINFO"},
-                    {"ticker", "GOOGLE"},
+                    {"ticker", tickerCode},
                     {"date", DateTime.Now.ToString() },
                     {"buyValue", random.Next(0, 100)},
                     {"sellValue", random.Next(0, 100) }
