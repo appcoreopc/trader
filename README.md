@@ -7,6 +7,8 @@ To setup client.
 Ensure you have installed webpack and node. 
 Open index.html 
 
+To serve client : 
+We uses a custom GoLang app server that supports Http2 request. It send simultaneous requested down to browsers. 
 
 To run server. 
 Open up the solution, restore the required package and press F5 
