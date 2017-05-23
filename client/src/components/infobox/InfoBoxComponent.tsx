@@ -54,11 +54,7 @@ undefined > {
                         .getState()
                         .volume;
 
-                    this.diffValue = Number(this.buyValue) - Number(this.sellValue);
-
-                    
-
-
+                    this.diffValue = Math.abs(Number(this.buyValue) - Number(this.sellValue));
                 } 
                 this.forceUpdate();
             });
@@ -74,6 +70,7 @@ undefined > {
 
     componentWillUnmount() {
         this.unsubscribe();
+        
     }
 
     render() {
