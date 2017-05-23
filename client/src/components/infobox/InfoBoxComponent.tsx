@@ -65,11 +65,23 @@ undefined > {
 
                             <table className="table">
                                 <tr>
-                                    <td className="tradeText">BUY</td>
-                                    <td className="blue-text">{this.buyValue}</td>
+                                    <td className="tradeMarker">
+                                        <div className="tradeText"> 
+                                            BUY IT
+                                        </div>
+                                        <div className="blue-text"> 
+                                            {this.buyValue}
+                                        </div>
+                                    </td>
                                     <td></td>
-                                    <td className="tradeText">SELL</td>
-                                    <td className="blue-text">{this.sellValue}</td>
+                                    <td className="tradeMarker">
+                                        <div className="tradeText"> 
+                                            SELL
+                                        </div>
+                                        <div className="blue-text"> 
+                                            {this.sellValue}
+                                        </div>
+                                    </td>
                                 </tr>
                             </table>
                         </div>

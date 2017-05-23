@@ -33,6 +33,8 @@ body {
 .blue-text {
     color : #0b809c;
     font-size : 30px;
+    margin : auto;
+    text-align: center;
 }
 
 table>tr>td { 
@@ -40,9 +42,10 @@ table>tr>td {
   color : #fff;
 }
 
-table>tr>td.tradeText {
-    float : right; 
-    padding-right :20px;
+.tradeText {
+    margin : auto;
+    text-align: center;
+    padding-top : 6px;
 }
 .container { 
   padding-bottom: 20px;
@@ -59,5 +62,21 @@ div .panel {
 .nv-y text{
   font-size: 9px;
   fill: #fff;
-  
 }
+
+.tradeMarker {
+    padding-top : 6px;
+}
+
+.tradeMarker:hover .tradeText {
+    background-color : #00a4cb;
+    color : #fff;
+}
+
+.tradeMarker:hover .blue-text {
+    background-color : #00a4cb;
+    color : #fff;
+    
+}
+
+
