@@ -23,6 +23,7 @@ undefined > {
     private buyValue : string = "0";
     private sellValue : string = "0";
     private lastVol : string = "0";
+    private diffValue : number = 0;
 
     constructor()
     {
@@ -52,10 +53,25 @@ undefined > {
                         .store
                         .getState()
                         .volume;
+
+                    this.diffValue = Number(this.buyValue) - Number(this.sellValue);
+
+                    
+
+
                 } 
                 this.forceUpdate();
             });
     }
+
+    renderUpDown()
+    {
+        if (this.diffValue > 0)
+            return (<span className='glyphicon-class'>glyphicon glyphicon-triangle-top</span>);
+        else 
+            return (<span className='glyphicon-class'>glyphicon glyphicon-triangle-bottom</span>);
+    }
+
     componentWillUnmount() {
         this.unsubscribe();
     }
@@ -78,7 +94,15 @@ undefined > {
                                             {this.buyValue}
                                         </div>
                                     </td>
-                                    <td></td>
+                                    <td>
+                                    {this.diffValue > 0 ? 
+                                        <div className="middleAlign"><i className="fa fa-chevron-circle-up upText"></i> <div>{this.diffValue}</div></div> : 
+                                        <div className="middleAlign"><i className="fa fa-chevron-circle-down downText"></i>
+                                        <div>{this.diffValue}</div>
+                                        </div> 
+                                    }
+
+                                    </td>
                                     <td className="tradeMarker">
                                         <div className="tradeText"> 
                                             SELL

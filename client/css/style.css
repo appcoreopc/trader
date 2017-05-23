@@ -82,3 +82,15 @@ div .panel {
     color : #888890;
     padding: 10px;
 }
+
+.upText {
+    color : green;
+}
+
+.downText {
+    color : red;
+}
+
+.middleAlign { 
+    padding-top: 30px;
+}
