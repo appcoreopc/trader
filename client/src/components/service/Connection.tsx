@@ -39,28 +39,17 @@ export class TradeConnection
                         ticker: argumentKeyword.ticker,
                         description: '22222222',
                         buyValue: argumentKeyword.buyValue,
-                        sellValue: argumentKeyword.sellValue
+                        sellValue: argumentKeyword.sellValue,
+                        volume: argumentKeyword.volume
                     }
                 };
                 store.dispatch(tradeInfo);
             });
 
-            console.log('we are calling a service');
-            // tries to call a RPC 
             session.call('com.trader.getIndexPrice').then((a ) => 
             {
                 console.log(a);
             });
-
-
-
-
-
-
-
-
-
-
         };
     }
 }

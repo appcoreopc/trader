@@ -28,7 +28,7 @@ namespace TradeHost
                 realm.Services.RegisterCallee(priceIndexService);
                 
                 IObservable<long> timer = Observable.Timer(TimeSpan.FromMilliseconds(0),
-                    TimeSpan.FromMilliseconds(5000));
+                    TimeSpan.FromMilliseconds(3000));
 
                 Random random = new Random();
                 Random tickerRandom = new Random();
@@ -55,7 +55,8 @@ namespace TradeHost
                     {"ticker", tickerCode},
                     {"date", DateTime.Now.ToString() },
                     {"buyValue", random.Next(0, 100)},
-                    {"sellValue", random.Next(0, 100) }
+                    {"sellValue", random.Next(0, 100) },
+                    {"volume", random.Next(0, 10000) }
                 }
                         };
 

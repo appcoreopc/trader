@@ -22,6 +22,7 @@ undefined > {
     private tickerCode : string;
     private buyValue : string = "0";
     private sellValue : string = "0";
+    private lastVol : string = "0";
 
     constructor()
     {
@@ -46,6 +47,11 @@ undefined > {
                         .getState()
                         .sellValue;
 
+                    this.lastVol = this
+                        .context
+                        .store
+                        .getState()
+                        .volume;
                 } 
                 this.forceUpdate();
             });
@@ -62,7 +68,6 @@ undefined > {
                     <div className="body-panel-white">{this.props.title}</div>
                     <div className="panel-body-dark">
                         <div className="boxModel">
-
                             <table className="table">
                                 <tr>
                                     <td className="tradeMarker">
@@ -85,6 +90,11 @@ undefined > {
                                 </tr>
                             </table>
                         </div>
+
+                        <div className="volumeDiv"> 
+                            Last Vol : {this.lastVol}
+                        </div>  
+                        
                     </div>
                 </div>
             </div>

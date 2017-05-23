@@ -14,7 +14,8 @@ let store = createStore((state : any, action : any) => {
                 'title': action.item.title,
                 'description': action.item.description,
                 'sellValue' : action.item.sellValue, 
-                'buyValue' : action.item.buyValue
+                'buyValue' : action.item.buyValue,
+                'volume' : action.item.volume,
             };
             return newstate;
         default:
