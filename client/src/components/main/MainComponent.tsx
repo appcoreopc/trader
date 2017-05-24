@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import * as React from "react";
 import {InfoBoxComponent} from '../infobox/InfoBoxComponent';
 import {PriceIndexComponent} from '../priceindex/PriceIndexComponent';
+import {ConnectionComponent} from '../connectionIndicator/ConnectionComponent'
 
 export interface InfoBoxProps {
     title : string;
@@ -36,10 +37,10 @@ undefined > {
                         <InfoBoxComponent title='MSFT' tickerCode='MSFT' description='description1'/>
                         <InfoBoxComponent title='IBM' tickerCode='IBM' description='description1'/> 
                         <PriceIndexComponent title="NYSE - Index" />
-
                     </div>
                 </div>
             </div>
+            <ConnectionComponent />
         </div>;
     }
 }

@@ -18,6 +18,12 @@ let store = createStore((state : any, action : any) => {
                 'volume' : action.item.volume,
             };
             return newstate;
+        case 'CONNECTIONINFO':
+            let connectionState = {
+                'description': action.item.description,
+                'connectionStatus' : action.item.connectionStatus,
+            };
+            return connectionState;            
         default:
             return state;
     }
@@ -35,6 +41,5 @@ ReactDOM.render(
     <MainComponent/>
 </Provider>, document.getElementById("app"));
 
-console.log('feedservice');
 let feedService = new FeedService(store);
 feedService.start();

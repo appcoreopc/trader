@@ -35,28 +35,31 @@ undefined > {
             .context
             .store
             .subscribe(() => {
+                
+                if (this.context.store.getState())
+                {
+                    if (this.props.tickerCode == this.context.store.getState().tickerCode) {
+                        this.buyValue = this
+                            .context
+                            .store
+                            .getState()
+                            .buyValue;
+                        this.sellValue = this
+                            .context
+                            .store
+                            .getState()
+                            .sellValue;
 
-                if (this.props.tickerCode == this.context.store.getState().tickerCode) {
-                    this.buyValue = this
-                        .context
-                        .store
-                        .getState()
-                        .buyValue;
-                    this.sellValue = this
-                        .context
-                        .store
-                        .getState()
-                        .sellValue;
+                        this.lastVol = this
+                            .context
+                            .store
+                            .getState()
+                            .volume;
 
-                    this.lastVol = this
-                        .context
-                        .store
-                        .getState()
-                        .volume;
-
-                    this.diffValue = Math.abs(Number(this.buyValue) - Number(this.sellValue));
-                } 
-                this.forceUpdate();
+                        this.diffValue = Number(this.buyValue) - Number(this.sellValue);
+                    } 
+                    this.forceUpdate();
+                }
             });
     }
 
@@ -93,9 +96,9 @@ undefined > {
                                     </td>
                                     <td>
                                     {this.diffValue > 0 ? 
-                                        <div className="middleAlign"><i className="fa fa-chevron-circle-up upText"></i> <div>{this.diffValue}</div></div> : 
+                                        <div className="middleAlign"><i className="fa fa-chevron-circle-up upText"></i> <div>{Math.abs(this.diffValue)}</div></div> : 
                                         <div className="middleAlign"><i className="fa fa-chevron-circle-down downText"></i>
-                                        <div>{this.diffValue}</div>
+                                        <div>{Math.abs(this.diffValue)}</div>
                                         </div> 
                                     }
 
