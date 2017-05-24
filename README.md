@@ -15,4 +15,6 @@ Open up the solution, restore the required package and press F5
 
 Intended to be uses as a actual implementation of next generation of web applicaton and event store for eventual consistency in large scale scalable application.
 
+Inline-style: 
+![alt text](https://github.com/appcoreopc/trader/blob/master/trader1.gif "Wamp Trader")
 
