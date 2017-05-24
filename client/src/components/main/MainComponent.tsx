@@ -38,9 +38,12 @@ undefined > {
                         <InfoBoxComponent title='IBM' tickerCode='IBM' description='description1'/> 
                         <PriceIndexComponent title="NYSE - Index" />
                     </div>
+                    <div className="col-md-12">
+                        <ConnectionComponent />
+                    </div>
                 </div>
             </div>
-            <ConnectionComponent />
+            
         </div>;
     }
 }

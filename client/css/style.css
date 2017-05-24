@@ -94,3 +94,14 @@ div .panel {
 .middleAlign { 
     padding-top: 30px;
 }
+
+.connectionText { 
+    font-weight: bold;
+}
+.fa-check-circle { 
+    color : green;
+}
+
+.fa-times-circle { 
+    color : red;
+}

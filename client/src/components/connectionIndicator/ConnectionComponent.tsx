@@ -40,9 +40,6 @@ undefined > {
                             .getState()
                             .description;
 
-                        console.log('latest connection status ');
-                        console.log(this.connectionStatus);
-                        console.log(this.description);
                     }
                     this.forceUpdate();
                 }
@@ -67,12 +64,10 @@ undefined > {
 
     render() {
         return <div>
-            <div className="col-md-12">
-                <div>
-                    Connection status : {this.renderConnectionStatus()} {this.description}
+                <div className="col-md-3">
+                    <span className="connectionText"> Connection status </span> : {this.renderConnectionStatus()} {this.description}
                 </div>
-            </div>
-        </div>;
+            </div>;
     }
 }
 
