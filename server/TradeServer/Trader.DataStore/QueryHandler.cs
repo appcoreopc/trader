@@ -20,9 +20,8 @@ namespace Trader.DataStore
     {
         public CompanyStockData()
         {
-            Field<NewsType>("news", resolve: context => new News()); // Get news streams
-
             Field<NewsType>("new", resolve: context => new News()); // Get news streams
+            Field<NewsType>("news", resolve: context => new News()); // Get news streams
         }
     }
 
