@@ -8,14 +8,14 @@ namespace Trader.DataStore
     {
         public async Task ExecuteQuery(GraphQLQuery query)
         {
-           var result = await new DocumentExecuter().ExecuteAsync(x =>
-           {
-            //schema 
-             x.Query = query.Query;
-           }).ConfigureAwait(false);
+            var result = await new DocumentExecuter().ExecuteAsync(x =>
+            {
+               //schema 
+               x.Query = query.Query;
+            }).ConfigureAwait(false);
         }
     }
-    
+
     public class CompanyStockData : ObjectGraphType
     {
         public CompanyStockData()
