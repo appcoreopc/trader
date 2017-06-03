@@ -28,9 +28,9 @@ namespace Trader.DataStore
                 Country = "Demo",
                 Id = "test",
                 NewsData = "newsddata",
-                SecuityCode = "1010010" 
-            }); 
-            
+                SecuityCode = "1010010"
+            });
+
             Field<CorporateNewsType>(ExchangeNewsType,
                arguments: new QueryArguments(
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "id", Description = "id of the human" }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GraphQL.Http;
+using System;
 using System.Threading.Tasks;
 using TradeHost;
 using Trader.DataStore;
@@ -22,6 +23,11 @@ namespace TradeServer
             var query = new GraphQLQuery { Query = "query { corporatenews { newsData } }", Variables = "" };
             var handler = new GraphQLQueryHandler();
             var result =  handler.ExecuteQuery(query);
+
+            var writer = new DocumentWriter(true);
+            var json = writer.Write(result);
         }
+
+
     }
 }

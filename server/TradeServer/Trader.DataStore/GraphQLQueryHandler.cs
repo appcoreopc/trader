@@ -34,7 +34,7 @@ namespace Trader.DataStore
 
 
             }).ConfigureAwait(false);
-
+            
             return result;
         }
     }
