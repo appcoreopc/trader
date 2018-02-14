@@ -2,7 +2,7 @@
 
 This real time market feed broadcast applications uses React, WebPack, Node, Redux, Bootstrap, Autobahn as the front end. It uses WAMP to get feed from backend server which uses .Net/SharpWamp/EventStore/MsgPack. 
 
-This demonstrate a way way of building REST basedd services, support traditional RPC and bidirectional REST service. Huge data footprint bewtween client and server is reduce by using msgpack. 
+This demonstrate a new way of building REST basedd services, support traditional RPC and bidirectional REST service. Huge data footprint bewtween client and server is reduce by using msgpack. 
 
 News section is implemented using Facebook GraphQL (GraphQL - .Net)
 
